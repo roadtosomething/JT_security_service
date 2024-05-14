@@ -1,0 +1,27 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: security_service
+  r2dbc:
+    url: r2dbc:pool:postgres://localhost:5432/just_talk_db
+    username: postgres
+    password: postgres
+  flyway:
+    url: jdbc:postgresql://localhost:5432/just_talk_db
+    locations: classpath:db/mgr
+    user: postgres
+    password: postgres
+
+jwt:
+  password:
+    encoder:
+      secret: SsqL/RDeYJvlfsv6wTMO9B59IEAmhubTSHmsrMXRksQ=
+      iteration: 64
+      keylength: 256
+  secret: TAYbggXhCWg4pNd5nKQqPYHfXTvldhQ9A+ztLhcbFrq3KQirEwlbVIk9MGV+C8PsS+sh1ErPsrtnvdJTAovIJQ==
+  expiration: 3600
+  issuer: JTSecureApp
+
+
