@@ -1,3 +1,4 @@
+drop table actors;
 drop table users;
 CREATE table users(
                       id serial primary key,

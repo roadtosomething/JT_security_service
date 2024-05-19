@@ -5,14 +5,14 @@ spring:
   application:
     name: security_service
   r2dbc:
-    url: r2dbc:pool:postgres://localhost:5432/just_talk_db
+    url: r2dbc:pool:postgres://localhost:5432/securedb
     username: postgres
-    password: postgres
+    password: admin
   flyway:
-    url: jdbc:postgresql://localhost:5432/just_talk_db
+    url: jdbc:postgresql://localhost:5432/securedb
     locations: classpath:db/mgr
     user: postgres
-    password: postgres
+    password: admin
 
 jwt:
   password:

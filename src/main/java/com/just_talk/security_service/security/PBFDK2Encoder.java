@@ -28,7 +28,6 @@ public class PBFDK2Encoder implements PasswordEncoder {
     @Override
     public String encode(CharSequence rawPassword) {
         try{
-            log.info("income PASSWORD {}", rawPassword);
             byte[] result = SecretKeyFactory.getInstance(SECRET_KEY_INSTANCE)
                     .generateSecret(new PBEKeySpec(rawPassword.toString().toCharArray(),
                             secret.getBytes(),

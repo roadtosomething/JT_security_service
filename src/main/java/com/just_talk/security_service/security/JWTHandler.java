@@ -23,7 +23,7 @@ public class JWTHandler {
         final Date expirationDate = claims.getExpiration();
 
 
-        if (!expirationDate.before(new Date())){
+        if (expirationDate.before(new Date())){
             throw new RuntimeException("Token expired");
         }
 
