@@ -5,7 +5,7 @@ spring:
   application:
     name: security_service
   r2dbc:
-    url: r2dbc:pool:postgres://localhost:5432/securedb
+    url: r2dbc:pool:postgres://postgres:5432/securedb
     username: postgres
     password: admin
   flyway:
@@ -23,5 +23,3 @@ jwt:
   secret: TAYbggXhCWg4pNd5nKQqPYHfXTvldhQ9A+ztLhcbFrq3KQirEwlbVIk9MGV+C8PsS+sh1ErPsrtnvdJTAovIJQ==
   expiration: 3600
   issuer: JTSecureApp
-
-

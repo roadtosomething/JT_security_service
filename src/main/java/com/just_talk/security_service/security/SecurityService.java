@@ -7,6 +7,7 @@ import com.just_talk.security_service.service.UserService;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -14,6 +15,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.*;
 
+@Slf4j
 @Component
 @RequiredArgsConstructor
 public class SecurityService {
@@ -61,6 +63,7 @@ public class SecurityService {
                 .build();
     }
     public Mono<TokenDetail> authenticate (String username, String password){
+        log.info("Authenticating user {} with password {}", username,password);
         return userService.getUserbyUsername(username)
                 .flatMap(user ->{
 

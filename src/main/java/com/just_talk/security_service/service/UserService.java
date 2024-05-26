@@ -1,7 +1,6 @@
 package com.just_talk.security_service.service;
 
 import com.just_talk.security_service.entity.UserEntity;
-import com.just_talk.security_service.entity.UserRole;
 import com.just_talk.security_service.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +21,6 @@ public class UserService {
          return userRepository.save(
                 user.toBuilder()
                         .password(passwordEncoder.encode(user.getPassword()))
-                        .role(UserRole.EXPERT)
                         .enabled(true)
                         .createdAt(LocalDateTime.now())
                         .updatedAt(LocalDateTime.now())
