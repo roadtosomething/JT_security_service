@@ -15,7 +15,6 @@ public class UserAuthentificationBearer {
 
         String role = claims.get("role", String.class);
         String username = claims.get("username", String.class);
-        String firstname = claims.get("firstname", String.class);
 
         List<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority(role));
 
